@@ -10,6 +10,15 @@ landingPageEl = document.querySelector(".#landingPage");
 questionsEl = document.querySelector(".#Questions");
 bonusTimeEl = document.querySelector(".#bonusAdded");
 // answers
+answersEl = document.querySelector(".answers");
+questionsArrays = [
+    {
+        title: "What is the profession of Tanel's father?",
+        options: ['Doctor','Electrician','Bricklayer','Builder'],
+        answer: 4
+    },
+    
+]
 
 
 let begin = document.querySelector("#landingpage")
