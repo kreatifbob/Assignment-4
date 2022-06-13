@@ -1,15 +1,43 @@
 
-let begin = document.querySelector("#landingpage")
-
-// variables elements html to js's
-
-// timer elements
+beginButton = document.querySelector(".beginButton");
+timerEl = document.querySelector(".timeleft"); // timer elements
 // firstpage elements 
 // questions page elements 
 // questions 
 // bonustime time
+startPageEl = document.querySelector();
+landingPageEl = document.querySelector();
+questionsEl = document.querySelector();
+bonusTimeEl = document.querySelector();
+
+let begin = document.querySelector("#landingpage")
+
+// variables elements html to js's
+
+
+
+
+// start up page
+let secondsleft = 20;
+let startPageMode = true;
+pageMode();
+onclick();
+
+//click event 
+function onclick(){
+    beginButton.addEventListener{"click", function(){
+        startPageMode = false;
+        Infinity();
+    }};
+}
+
+// Questions 
+
+let currentIndex = 0;
 
 // timer function 
+
+
 // page mode function ın order hide question page
 
 function pageMode(){
