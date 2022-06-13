@@ -41,6 +41,12 @@ function onclick() {
 
 let currentIndex = 0;
 
+function showQuestion(){
+    let showQuestion = questionsEl.textContent = questionsArrays[currentIndex];
+    let currentchoices = questionsArrays[currentIndex].choices;
+    console.log(currentchoices);
+
+}
 // timer function
 
 // page mode function ın order hide question page
