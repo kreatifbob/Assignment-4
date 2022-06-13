@@ -5,19 +5,19 @@ timerEl = document.querySelector(".#timeleft"); // timer elements
 // questions page elements 
 // questions 
 // bonustime time
-startPageEl = document.querySelector(".#begin");
-landingPageEl = document.querySelector(".#landingPage");
-questionsEl = document.querySelector(".#Questions");
+startPageEl = document.querySelector(".#landingPage");
+landingPageEl = document.querySelector(".#Questions");
+questionsEl = document.querySelector(".#qQuestions");
 bonusTimeEl = document.querySelector(".#bonusAdded");
 // answers
-answersEl = document.querySelector(".answers");
+answersEl = document.querySelector(".choices");
 questionsArrays = [
     {
         title: "What is the profession of Tanel's father?",
         options: ['Doctor','Electrician','Bricklayer','Builder'],
         answer: 4
     },
-    
+
 ]
 
 
@@ -53,10 +53,10 @@ let currentIndex = 0;
 // page mode function ın order hide question page
 
 function pageMode(){
-    if(empty === true){                  //replace empty with startpage
+    if(landingPage === true){                  //replace empty with startpage
         //questionspage display none
         //landingpage display default
-    }else if(empty === false){          //replace empty with questionspage
+    }else if(qQuestions === false){          //replace empty with questionspage
         //questionspage display default
         //landingpage display none
     }
