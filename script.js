@@ -16,6 +16,16 @@ questionsArrays = [
     options: ["Doctor", "Electrician", "Bricklayer", "Builder"],
     answer: 4,
   },
+  {
+    title: "What is the profession of Tanel's mother?",
+    options: ["Housewife", "Beautician", "Computer Engineer", "Architect"],
+    answer: 2,
+  },
+  {
+    title: "What is the profession of Tanel's sister?",
+    options: ["Housewife", "Beautician", "Computer Engineer", "Architect"],
+    answer: 4,
+  },
 ];
 
 let begin = document.querySelector("#landingPage");
@@ -44,8 +54,38 @@ let currentIndex = 0;
 function showQuestion(){
     let showQuestion = questionsEl.textContent = questionsArrays[currentIndex];
     let currentchoices = questionsArrays[currentIndex].choices;
-    console.log(currentchoices);
+    // console.log(currentchoices);
 
+}
+
+questionsEl.innerHTML = "";
+questionsArrays[currentIndex].choices.forEach(function(option, index){
+    let buttonEl = document.createElement("button");
+    buttonEl.setAttribute('class','choices');
+    buttonEl.setAttribute('id', index);
+    buttonEl.textContent = option;
+    answersEl.append(buttonEl);
+});
+
+bonusTimeEl.innerHTML = "";
+timerEl.addEventListener('click', function(event){
+    console.log(event.target.id);
+    let buttonIndex = event.target.id;
+
+    if(buttonIndex == questionsArrays[currentIndex].answer){
+        console.log("You are correct");
+        secondsleft = secondsleft + 8;
+        bonusTimeEl.innerHTML = "+8";
+        bonusAddedTimer();
+        currentIndex++;
+        showQuestion();
+    }
+})
+
+function bonusAddedTimer(){
+    setInterval(function(){
+        bonusTimeEl.innerHTML = "";
+    },1000)
 }
 // timer function
 
