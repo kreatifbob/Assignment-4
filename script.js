@@ -26,11 +26,12 @@ pageMode();
 onclick();
 
 //click event 
+
 function onclick(){
-    beginButton.addEventListener{"click", function(){
+    beginButton.addEventListener("click", function(){
         startPageMode = false;
         Infinity();
-    }};
+    });
 }
 
 // Questions 
