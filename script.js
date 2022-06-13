@@ -1,14 +1,16 @@
 
 beginButton = document.querySelector(".beginButton");
-timerEl = document.querySelector(".timeleft"); // timer elements
+timerEl = document.querySelector(".#timeleft"); // timer elements
 // firstpage elements 
 // questions page elements 
 // questions 
 // bonustime time
-startPageEl = document.querySelector();
-landingPageEl = document.querySelector();
-questionsEl = document.querySelector();
-bonusTimeEl = document.querySelector();
+startPageEl = document.querySelector(".#begin");
+landingPageEl = document.querySelector(".#landingPage");
+questionsEl = document.querySelector(".#Questions");
+bonusTimeEl = document.querySelector(".#bonusAdded");
+// answers
+
 
 let begin = document.querySelector("#landingpage")
 
