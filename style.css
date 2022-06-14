@@ -20,3 +20,12 @@
 #countdown{
     padding-right: 50px;
 }
+
+.visible{
+    display: block;
+}
+
+
+.invisible{
+    display: none;
+}
