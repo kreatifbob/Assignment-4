@@ -1,15 +1,15 @@
-beginButton = document.querySelector(".beginButton");
-timerEl = document.querySelector(".#timeleft"); // timer elements
+beginButton = document.querySelector("#beginButton");
+timerEl = document.querySelector("#timeleft"); // timer elements
 // firstpage elements
 // questions page elements
 // questions
 // bonustime time
-startPageEl = document.querySelector(".#landingPage");
-landingPageEl = document.querySelector(".#Questions");
-questionsEl = document.querySelector(".#qQuestions");
-bonusTimeEl = document.querySelector(".#bonusAdded");
+startPageEl = document.querySelector("#landingPage");
+landingPageEl = document.querySelector("#Questions");
+questionsEl = document.querySelector("#qQuestions");
+bonusTimeEl = document.querySelector("#bonusAdded");
 // answers
-answersEl = document.querySelector(".choices");
+answersEl = document.querySelector("#choices");
 questionsArrays = [
   {
     title: "What is the profession of Tanel's father?",
@@ -30,6 +30,7 @@ questionsArrays = [
 
 let begin = document.querySelector("#landingPage");
 
+
 // variables elements html to js's
 
 // start up page
@@ -42,8 +43,9 @@ onclick();
 
 function onclick() {
   beginButton.addEventListener("click", function () {
-    startPageMode = false;
-    Infinity();
+    console.log("xx");
+    begin.setAttribute("class","invisible");
+    landingPageEl.setAttribute("class","visible");
   });
 }
 
@@ -59,7 +61,7 @@ function showQuestion(){
 }
 
 questionsEl.innerHTML = "";
-questionsArrays[currentIndex].choices.forEach(function(option, index){
+questionsArrays[currentIndex].options.forEach(function(option, index){
     let buttonEl = document.createElement("button");
     buttonEl.setAttribute('class','choices');
     buttonEl.setAttribute('id', index);
@@ -110,3 +112,6 @@ function init() {
 
 // add listener when clicking strat start the page //functıon for clıck
 // create an array of q's and answers
+
+
+// 
