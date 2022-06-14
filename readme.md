@@ -25,4 +25,4 @@ functions
 
  # 4. Screenshot 
  See screeshot below to deployed URL
- ![plot](./)
+ ![plot](./Screenshot%202022-06-14%2021.57.24.png)
