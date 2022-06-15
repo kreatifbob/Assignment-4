@@ -14,21 +14,22 @@ questionsArrays = [
   {
     title: "What is the profession of Tanel's father?",
     options: ["Doctor", "Electrician", "Bricklayer", "Builder"],
-    answer: 4,
+    answer: "Builder",
   },
   {
     title: "What is the profession of Tanel's mother?",
     options: ["Housewife", "Beautician", "Computer Engineer", "Architect"],
-    answer: 2,
+    answer:"Beautician",
   },
   {
     title: "What is the profession of Tanel's sister?",
     options: ["Housewife", "Beautician", "Computer Engineer", "Architect"],
-    answer: 4,
+    answer: "Architect",
   },
 ];
 
 let begin = document.querySelector("#landingPage");
+let scorres = document.querySelector('#scores');
 
 
 // variables elements html to js's
@@ -37,17 +38,15 @@ let begin = document.querySelector("#landingPage");
 let secondsleft = 20;
 let startPageMode = true;
 pageMode();
-onclick();
 
-//click event
+beginButton.addEventListener("click", function () {
+  console.log("xx");
+  begin.setAttribute("class","invisible");
+  scorres.setAttribute("class","invisible");
+  landingPageEl.setAttribute("class","visible");
+  renderQA()
+});
 
-function onclick() {
-  beginButton.addEventListener("click", function () {
-    console.log("xx");
-    begin.setAttribute("class","invisible");
-    landingPageEl.setAttribute("class","visible");
-  });
-}
 
 // Questions
 
@@ -60,14 +59,35 @@ function showQuestion(){
 
 }
 
-questionsEl.innerHTML = "";
-questionsArrays[currentIndex].options.forEach(function(option, index){
-    let buttonEl = document.createElement("button");
-    buttonEl.setAttribute('class','choices');
-    buttonEl.setAttribute('id', index);
-    buttonEl.textContent = option;
-    answersEl.append(buttonEl);
-});
+function renderQA () {
+  questionsEl.innerHTML = "";
+  answersEl.innerHTML = "";
+  let questionH3 = document.createElement("h3");
+  questionH3.textContent = questionsArrays[currentIndex].title;
+  questionsEl.append(questionH3);
+
+  questionsArrays[currentIndex].options.forEach(function(option, index){
+      let buttonEl = document.createElement("button");
+      buttonEl.setAttribute('class','choices');
+      buttonEl.setAttribute('id', index);
+      buttonEl.setAttribute('value', option);
+      buttonEl.textContent = option;
+      buttonEl.onclick = checkAnswer;
+      answersEl.append(buttonEl);
+  });
+}
+
+function checkAnswer(){
+
+  // console.log('check answer')
+  if(questionsArrays[currentIndex].answer == this.value) {
+    console.log('correct')
+    currentIndex++;
+    renderQA()
+  } else {
+    console.log('wrong')
+  }
+}
 
 bonusTimeEl.innerHTML = "";
 timerEl.addEventListener('click', function(event){
